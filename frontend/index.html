@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/assets/style.css"><script src="/assets/main.js" defer></script>
 </head>
 <body>
-  <header><a class="brand" href="/">Kit<span>Gift</span><span class="gift" aria-hidden="true">✦</span></a><span class="badge">Gestão de kits</span></header>
+  <header><a class="brand" href="/">Kit<span>Gift</span><span class="gift" aria-hidden="true">✦</span></a><a class="badge" href="/">Ver vitrine ↗</a></header>
   <main>
     <section class="intro"><p class="eyebrow">PEQUENOS GESTOS, GRANDES SORRISOS</p><h1>Todo presente começa<br>com uma boa ideia.</h1><p>Cadastre seus kits e mantenha cada detalhe em um só lugar.</p></section>
     <section class="panel" aria-labelledby="form-title">
@@ -17,6 +17,7 @@
           <label>Categoria<select id="categoria" name="categoria" required disabled><option value="">Carregando categorias…</option></select></label>
           <label>Preço (R$)<input id="preco" name="preco" type="text" inputmode="decimal" required placeholder="59,90" pattern="[0-9]+([,.][0-9]{1,2})?"><small>Use vírgula ou ponto, sem separador de milhar.</small></label>
           <label>Estoque<input id="estoque" name="estoque" type="number" min="0" max="2147483647" step="1" required placeholder="5"></label>
+          <label class="wide">URL da imagem <span class="optional">(opcional)</span><input id="imagem" type="url" placeholder="https://..." maxlength="2000"><small>Use uma imagem que você tem autorização para exibir. Sem imagem, a vitrine mostra a categoria.</small></label>
           <label class="wide">Descrição <span class="optional">(opcional)</span><textarea id="descricao" name="descricao" rows="3" maxlength="2000" placeholder="O que torna esse kit especial?"></textarea></label>
         </div>
         <div class="form-footer"><span>Os campos indicados como opcionais podem ficar vazios.</span><button id="save-product" type="submit" disabled>Cadastrar kit <span aria-hidden="true">↗</span></button></div>

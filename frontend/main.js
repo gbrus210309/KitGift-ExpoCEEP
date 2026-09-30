@@ -117,7 +117,7 @@ async function cadastrarProduto(event) {
   el('save-product').disabled = true;
   el('save-product').textContent = 'Salvando…';
   try {
-    await api('/produtos', {nome: el('nome').value.trim(), id_categoria: Number(el('categoria').value), preco: cents, estoque: Number(el('estoque').value), descricao: el('descricao').value.trim() || null});
+    await api('/produtos', {nome: el('nome').value.trim(), id_categoria: Number(el('categoria').value), preco: cents, estoque: Number(el('estoque').value), descricao: el('descricao').value.trim() || null, imagem: el('imagem').value.trim() || null});
     el('product-form').reset();
     message('product-message', 'Kit cadastrado com sucesso!');
     await carregarProdutos();

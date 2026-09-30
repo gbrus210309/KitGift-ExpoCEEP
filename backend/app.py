@@ -67,7 +67,21 @@ def create_app(database_path=None):
 
     @app.get('/')
     def index():
+        return send_from_directory(Path(__file__).resolve().parents[1] / 'frontend', 'loja.html')
+
+    @app.get('/admin')
+    def admin():
         return send_from_directory(Path(__file__).resolve().parents[1] / 'frontend', 'index.html')
+
+    @app.get('/api/catalogo')
+    def catalog():
+        with closing(connection()) as conn:
+            rows = conn.execute('''SELECT p.*, c.nome AS categoria FROM produtos p
+                JOIN categorias c ON c.id_categoria = p.id_categoria
+                WHERE p.ativo = 1 AND c.ativo = 1 ORDER BY p.id_produto DESC''').fetchall()
+        response = jsonify([dict(row) for row in rows])
+        response.headers['Cache-Control'] = 'no-store'
+        return response
 
     @app.get('/assets/<path:filename>')
     def assets(filename):

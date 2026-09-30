@@ -14,13 +14,13 @@ O KitGift reúne produtos complementares em kits para diferentes necessidades e 
 
 O protótipo usa Python/Flask, SQLite e HTML/CSS/JavaScript com fetch e JSON. A vitrine em / permite busca, filtro, ordenação e consulta de detalhes. A gestão em /admin cadastra categorias e kits e exclui produtos. As duas telas consultam o mesmo banco. A API permite atualizar produtos por PUT. Carrinho, pedidos, autenticação e pagamentos ainda não têm fluxo implementado.
 
-O README local contém instruções de execução, endpoints e exemplos JSON. Nove testes automatizados passaram na validação da vitrine em 29/09/2026, usando banco temporário. A busca e os detalhes também foram conferidos no navegador.
+O README publicado contém instruções de execução, endpoints e exemplos JSON. Nove testes automatizados passaram na validação da vitrine em 29/09/2026, usando banco temporário. A busca e os detalhes também foram conferidos no navegador.
 
 3. Checklist de entrega
 
-README estruturado: concluído localmente; publicação da revisão pendente.
+README estruturado: publicado, com instruções de execução, endpoints e exemplos JSON.
 
-GitHub atualizado: pendente. O repositório foi consultado e ainda não contém a vitrine nem os documentos desta etapa. A integração recusou a escrita (403).
+GitHub atualizado: publicação da vitrine, backend, README, banner e relatório conferida no commit c52b828bc5a0a6f3cd807b3d1324f14a7e4c8942.
 
 Banner PDF: recebido e preservado integralmente, com capturas da vitrine e da gestão. Cópia no projeto: Banner-KitGift-ExpoCEEP.pdf.
 
@@ -32,7 +32,7 @@ QR code testado: não identificado no PDF recebido. A captura da tabela SQLite t
 
 A equipe dividiu a produção do material: Débora elaborou o banner e Gabriel forneceu as capturas. A síntese apresenta o objetivo do KitGift e ilustra a vitrine e a gestão. A principal atenção na apresentação é distinguir a proposta de comércio eletrônico das funções já implementadas. O grupo deve revisar este texto para confirmar que representa sua experiência.
 
-Preparado em 29/09/2026. Prazo indicado na atividade: 02/10/2026. A entrega no Classroom/formulário será realizada pelo grupo após a atualização do repositório.
+Preparado em 29/09/2026. Prazo indicado na atividade: 02/10/2026. A entrega no Classroom/formulário será realizada pelo grupo com o repositório atualizado.
 
 5. Evidência do banner recebido
 

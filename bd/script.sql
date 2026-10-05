@@ -93,4 +93,32 @@ CREATE TABLE pagamentos (
     transacao_id TEXT UNIQUE
 );
 
+-- Catálogo inicial criado pelo painel administrativo.
+INSERT INTO categorias (nome, descricao) VALUES
+    ('Escolar', 'Kits para estudo, organização e volta às aulas.'),
+    ('Datas especiais', 'Presentes para celebrar pessoas e momentos importantes.'),
+    ('Lazer', 'Kits para aproveitar momentos de descanso e diversão.');
+
+INSERT INTO produtos (id_categoria, nome, descricao, preco, estoque, imagem) VALUES
+    ((SELECT id_categoria FROM categorias WHERE nome = 'Escolar'),
+     'Kit Volta às Aulas',
+     'Cadernos, estojo e materiais essenciais reunidos para começar o ano letivo com praticidade e organização.',
+     8990, 15, '/assets/images/kit-volta-as-aulas.png'),
+    ((SELECT id_categoria FROM categorias WHERE nome = 'Datas especiais'),
+     'Kit Dia das Mães — Carinho e Relaxamento',
+     'Caneca, vela aromática, itens de autocuidado, flores e chocolates para transformar carinho em um momento especial.',
+     12990, 10, '/assets/images/kit-dia-das-maes.png'),
+    ((SELECT id_categoria FROM categorias WHERE nome = 'Datas especiais'),
+     'Kit Dia dos Pais — Café e Companhia',
+     'Café, caneca, caderno, caneta e chocolates em uma seleção elegante para celebrar quem está sempre presente.',
+     11990, 8, '/assets/images/kit-dia-dos-pais.png'),
+    ((SELECT id_categoria FROM categorias WHERE nome = 'Datas especiais'),
+     'Kit Aniversário — Celebração',
+     'Cupcake, bebida, chocolates e itens de festa reunidos para deixar qualquer aniversário mais alegre.',
+     9990, 12, '/assets/images/kit-aniversario.png'),
+    ((SELECT id_categoria FROM categorias WHERE nome = 'Lazer'),
+     'Kit Sessão Cinema',
+     'Pipoca, chocolates, bebidas e uma manta aconchegante para curtir uma sessão de cinema sem sair de casa.',
+     7490, 18, '/assets/images/kit-sessao-cinema.png');
+
 COMMIT;

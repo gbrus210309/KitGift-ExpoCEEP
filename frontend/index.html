@@ -17,7 +17,7 @@
           <label>Categoria<select id="categoria" name="categoria" required disabled><option value="">Carregando categorias…</option></select></label>
           <label>Preço (R$)<input id="preco" name="preco" type="text" inputmode="decimal" required placeholder="59,90" pattern="[0-9]+([,.][0-9]{1,2})?"><small>Use vírgula ou ponto, sem separador de milhar.</small></label>
           <label>Estoque<input id="estoque" name="estoque" type="number" min="0" max="2147483647" step="1" required placeholder="5"></label>
-          <label class="wide">URL da imagem <span class="optional">(opcional)</span><input id="imagem" type="url" placeholder="https://..." maxlength="2000"><small>Use uma imagem que você tem autorização para exibir. Sem imagem, a vitrine mostra a categoria.</small></label>
+          <label class="wide">Endereço da imagem <span class="optional">(opcional)</span><input id="imagem" type="text" placeholder="/assets/images/meu-kit.png ou https://..." maxlength="2000"><small>Use uma imagem do projeto ou uma imagem externa que você tem autorização para exibir.</small></label>
           <label class="wide">Descrição <span class="optional">(opcional)</span><textarea id="descricao" name="descricao" rows="3" maxlength="2000" placeholder="O que torna esse kit especial?"></textarea></label>
         </div>
         <div class="form-footer"><span>Os campos indicados como opcionais podem ficar vazios.</span><button id="save-product" type="submit" disabled>Cadastrar kit <span aria-hidden="true">↗</span></button></div>

@@ -22,7 +22,7 @@ function render() {
     const card=element('article','','kit'), visual=element('div','','visual');
     const fallback=()=>{ const t=element('div',p.categoria,'placeholder');t.append(element('small','KITGIFT · SELEÇÃO DE KITS'));visual.replaceChildren(t); };
     fallback();
-    if(p.imagem) { try { const url=new URL(p.imagem,location.origin); if(['http:','https:'].includes(url.protocol)) {const img=new Image();img.alt=p.nome;img.loading='lazy';img.referrerPolicy='no-referrer';img.onload=()=>visual.replaceChildren(img);img.onerror=fallback;img.src=url.href;} }catch{} }
+    if(p.imagem) { try { const url=new URL(p.imagem,location.origin); if(['http:','https:'].includes(url.protocol)) {const img=new Image();img.alt=p.nome;img.loading='lazy';img.referrerPolicy='no-referrer';img.onerror=fallback;img.src=url.href;visual.replaceChildren(img);} }catch{} }
     const bottom=element('div','','card-bottom'), button=element('button','Conhecer o kit ↗','details-button');button.type='button';button.setAttribute('aria-label','Conhecer '+p.nome);
     button.onclick=()=>{selectedId=p.id_produto;fillDetail(p);$('detail').showModal();};
     bottom.append(element('span',money.format(p.preco/100),'price'),button);

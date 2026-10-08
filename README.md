@@ -4,6 +4,8 @@ Projeto de e-commerce de kits de produtos complementares - EXPOCEEP, turma 3M. P
 
 Repositório oficial: https://github.com/gbrus210309/KitGift-ExpoCEEP
 
+Etapa 5 - EXPOCEEP: [relatório de consolidação final](docs/Relatorio-Etapa5-KitGift.pdf), [roteiro completo do pitch](docs/Roteiro-Pitch-Etapa5-KitGift.pdf) e [evidências do teste final](docs/etapa5-evidencias/). O ensaio foi organizado para aproximadamente 4 minutos e 15 segundos, com demonstração da vitrine, cadastro no painel administrativo e explicação da integração entre JavaScript, Flask e SQLite.
+
 Etapa 4 - EXPOCEEP: [relatório técnico](docs/Relatorio-Etapa4-KitGift.pdf) e [banner recebido da equipe](docs/Banner-KitGift-ExpoCEEP.pdf). Consulte as pendências no [registro da etapa](docs/etapa4-progresso.md).
 
 ## Interface da Etapa 3
@@ -184,10 +186,10 @@ Na interface: adicione uma categoria, cadastre um kit, confira a listagem e reca
 
 Se `python` não for reconhecido, confira se o Python está instalado e tente `py` no comando de criação do ambiente. Se a página não abrir, mantenha o servidor ligado e confira o endereço mostrado no terminal. Não tente abrir o site pelo arquivo HTML nem trate o link do GitHub como hospedagem da aplicação.
 
-Para executar os sete testes de integração com um banco temporário:
+Para executar os nove testes de integração com um banco temporário:
 
 ```powershell
-.\backend\venv\Scripts\python.exe -m unittest discover -s backend -p test_api.py -v
+.\backend\venv\Scripts\python.exe -m unittest discover -s backend -p "test*.py" -v
 ```
 
 Os testes cobrem CRUD, persistência após recriar a aplicação, isolamento de registros, JSON inválido, tipos e valores inválidos, categoria inexistente, SQL parametrizado e bloqueio de exclusão de produtos relacionados. `docs/evidencias-http.json` contém respostas de 12 requisições HTTP reais executadas com Python; esse registro não substitui os prints no Thunder Client/Postman exigidos pelo relatório.

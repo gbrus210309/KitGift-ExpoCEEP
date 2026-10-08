@@ -1,0 +1,27 @@
+{
+  "executado_em": "2026-10-07T21:38:58-03:00",
+  "metodo": "POST",
+  "rota": "/produtos",
+  "status_http": 201,
+  "requisicao": {
+    "nome": "Kit Teste Pitch - Etapa 5",
+    "id_categoria": 1,
+    "preco": 7990,
+    "estoque": 5,
+    "descricao": "Kit cadastrado durante o teste final do MVP para comprovar a integração entre interface, Flask e SQLite.",
+    "imagem": "/assets/images/kit-aniversario.png"
+  },
+  "resposta": {
+    "id_produto": 17,
+    "mensagem": "Produto cadastrado com sucesso!"
+  },
+  "sqlite": {
+    "id_produto": 17,
+    "id_categoria": 1,
+    "nome": "Kit Teste Pitch - Etapa 5",
+    "preco": 7990,
+    "estoque": 5,
+    "ativo": 1
+  },
+  "banco": "bd/banco.db"
+}

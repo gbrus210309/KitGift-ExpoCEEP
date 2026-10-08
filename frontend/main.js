@@ -119,7 +119,7 @@ async function cadastrarProduto(event) {
   try {
     await api('/produtos', {nome: el('nome').value.trim(), id_categoria: Number(el('categoria').value), preco: cents, estoque: Number(el('estoque').value), descricao: el('descricao').value.trim() || null, imagem: el('imagem').value.trim() || null});
     el('product-form').reset();
-    message('product-message', 'Kit cadastrado com sucesso!');
+    message('product-message', 'Kit cadastrado com sucesso! (HTTP 201)');
     await carregarProdutos();
   } catch (error) { message('product-message', error.message, true); }
   finally { savingProduct = false; el('save-product').disabled = !categories.some(c => c.ativo); el('save-product').textContent = 'Cadastrar kit ↗'; }

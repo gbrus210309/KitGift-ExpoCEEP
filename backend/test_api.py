@@ -25,10 +25,11 @@ class APITest(unittest.TestCase):
         return response.json['id_produto']
 
     def test_crud_and_persistence(self):
+        initial_count = len(self.client.get('/produtos').json)
         pid = self.create()
         other = self.create()
         restarted = create_app(self.path).test_client()
-        self.assertEqual(len(restarted.get('/produtos').json), 2)
+        self.assertEqual(len(restarted.get('/produtos').json), initial_count + 2)
         self.assertEqual(restarted.get(f'/produtos/{pid}').json['preco'], 5990)
         changed = dict(self.payload, nome='Kit carinho premium', preco=7990, estoque=3)
         self.assertEqual(self.client.put(f'/produtos/{pid}', json=changed).status_code, 200)
@@ -49,6 +50,7 @@ class APITest(unittest.TestCase):
         self.assertEqual(self.client.post('/produtos', data='nome=Kit').status_code, 415)
 
     def test_invalid_fields_do_not_change_records(self):
+        initial_count = len(self.client.get('/produtos').json)
         pid = self.create()
         for field, value in [('nome', 1), ('nome', ''), ('preco', -1), ('preco', 1.5),
                              ('preco', True), ('preco', 10**30), ('estoque', -1),
@@ -59,7 +61,7 @@ class APITest(unittest.TestCase):
                 self.assertEqual(self.client.post('/produtos', json=payload).status_code, 400)
                 self.assertEqual(self.client.put(f'/produtos/{pid}', json=payload).status_code, 400)
         self.assertEqual(self.client.get(f'/produtos/{pid}').json['preco'], 5990)
-        self.assertEqual(len(self.client.get('/produtos').json), 1)
+        self.assertEqual(len(self.client.get('/produtos').json), initial_count + 1)
 
     def test_related_product_cannot_be_deleted(self):
         pid = self.create()
